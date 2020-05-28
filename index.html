@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/js-datepicker/dist/datepicker.min.css"> 
+    <title>ToDo list app</title>
+
+</head>
+<body>
+    <H1>Todo List</H1>
+    <form>
+        <label for="task">Task: </label>
+        <input type="text" id="task">
+        <span>*</span>
+        <br>
+
+        <label for="due">Due: </label>
+        <input type="text" id="due">
+        <span>*</span>
+        <br>
+
+        <label for="is-completed">Is task completed?</label>
+        <input type="checkbox" id="task">
+        <span></span>
+        <br>
+
+        <input type="button" value="Add task">
+        
+    </form>
+    <script src="https://unpkg.com/js-datepicker"></script>
+    <script>
+        const picker = datepicker("#due");
+        picker.setMin(new Date()); // set to todays date
+    </script>
+</body>
+</html>
