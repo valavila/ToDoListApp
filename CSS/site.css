@@ -2,8 +2,15 @@
     width: 30%;
     box-sizing: border-box;
     background-color: lightblue;
+    padding: .5em;
+    border-radius: .75;
+    margin: 1em;
+    cursor: pointer;
 }
 
-.todo h1{
+.todo h3{
+    margin: 0px;
+}
+.todo p{
     margin: 0px;
 }
