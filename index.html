@@ -21,14 +21,23 @@
         <br>
 
         <label for="is-completed">Is task completed?</label>
-        <input type="checkbox" id="task">
+        <input type="checkbox" id="is-complete">
         <span></span>
         <br>
 
-        <input type="button" value="Add task">
+        <input type="button"id="add" value="Add task">
+        <br>
+
+        <h3>ToDo Items</h3>
+
+        <div id="all-items">
+            <div id="incomplete-items"></div>
+            <div id="complete-items"></div>
+        </div>
         
     </form>
     <script src="https://unpkg.com/js-datepicker"></script>
+    <script src="js/main.js"></script>
     <script>
         const picker = datepicker("#due");
         picker.setMin(new Date()); // set to todays date
