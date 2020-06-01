@@ -11,13 +11,21 @@ class ToDoItem{
 
 window.onload = function(){
     let addItem = document.getElementById("add");
-    addItem.onclick = process;
+    addItem.onclick = main;
 }
 function getInput(id):HTMLInputElement{
     return <HTMLInputElement>document.getElementById(id);
 }
+function loadSavedItems(){
+    let itemArray = getToDoItems() // read from storage
 
-function process(){
+    for(let i = 0; i < itemArray.length; i++){
+        let currItem = itemArray[i];
+        displayTodoItem(currItem);
+    }
+}
+
+function main(){
     if(isValid()){
         let item = getToDoItem();
         displayTodoItem(item);
@@ -56,9 +64,15 @@ function displayTodoItem(item: ToDoItem): void{
     itemText.innerText = item.title;
 
     let itemDate = document.createElement("p");
-    itemDate.innerText = item.dueDate.toDateString()
+    //itemDate.innerText = item.dueDate.toDateString()
+    let dueDate = new Date(item.dueDate.toString());
+    itemDate.innerText = dueDate.toDateString();
 
     let itemDiv = document.createElement("div");
+
+    //itemDiv.onclick = markAsComplete;
+
+    itemDiv.classList.add("todo");
     if(item.isCompleted){
         itemDiv.classList.add("completed");
     }
@@ -67,7 +81,7 @@ function displayTodoItem(item: ToDoItem): void{
     itemDiv.appendChild(itemDate);
 
     if(item.isCompleted){
-        let completedToDos = document.getElementById("incomplete-items")
+        let completedToDos = document.getElementById("complete-items")
         completedToDos.appendChild(itemDiv);
     }
     else{
@@ -75,6 +89,8 @@ function displayTodoItem(item: ToDoItem): void{
         incompleteTodos.appendChild(itemDiv);
     }
 
-    }
+    
 }
+
+
 

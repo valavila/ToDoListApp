@@ -5,12 +5,19 @@ var ToDoItem = (function () {
 }());
 window.onload = function () {
     var addItem = document.getElementById("add");
-    addItem.onclick = process;
+    addItem.onclick = main;
 };
 function getInput(id) {
     return document.getElementById(id);
 }
-function process() {
+function loadSavedItems() {
+    var itemArray = getToDoItems();
+    for (var i = 0; i < itemArray.length; i++) {
+        var currItem = itemArray[i];
+        displayTodoItem(currItem);
+    }
+}
+function main() {
     if (isValid()) {
         var item = getToDoItem();
         displayTodoItem(item);
@@ -33,15 +40,17 @@ function displayTodoItem(item) {
     var itemText = document.createElement("h3");
     itemText.innerText = item.title;
     var itemDate = document.createElement("p");
-    itemDate.innerText = item.dueDate.toDateString();
+    var dueDate = new Date(item.dueDate.toString());
+    itemDate.innerText = dueDate.toDateString();
     var itemDiv = document.createElement("div");
+    itemDiv.classList.add("todo");
     if (item.isCompleted) {
         itemDiv.classList.add("completed");
     }
     itemDiv.appendChild(itemText);
     itemDiv.appendChild(itemDate);
     if (item.isCompleted) {
-        var completedToDos = document.getElementById("incomplete-items");
+        var completedToDos = document.getElementById("complete-items");
         completedToDos.appendChild(itemDiv);
     }
     else {

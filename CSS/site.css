@@ -1,0 +1,9 @@
+.todo{
+    width: 30%;
+    box-sizing: border-box;
+    background-color: lightblue;
+}
+
+.todo h1{
+    margin: 0px;
+}
