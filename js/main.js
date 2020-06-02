@@ -76,3 +76,8 @@ function saveToDo(item) {
     localStorage.setItem(todokey, currItemString);
 }
 var todokey = "todo";
+function getToDoItems() {
+    var itemString = localStorage.getItem(todokey);
+    var item = JSON.parse(itemString);
+    return item;
+}

@@ -113,5 +113,14 @@ function saveToDo(item: ToDoItem):void{
 
 const todokey = "todo";
 
+/**
+ * Get toDo items or return null if none are found
+ */
+function getToDoItems():ToDoItem[]{
+    let itemString = localStorage.getItem(todokey);
+    let item:ToDoItem[] = JSON.parse(itemString);
+    return item;
+}
+
 
 
