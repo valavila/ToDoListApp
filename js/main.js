@@ -58,3 +58,11 @@ function displayTodoItem(item) {
         incompleteTodos.appendChild(itemDiv);
     }
 }
+function markAsComplete() {
+    var itemDiv = this;
+    console.log(itemDiv);
+    itemDiv.classList.add("completed");
+    var completedItems = document.getElementById("complete-items");
+    console.log(completedItems);
+    completedItems.appendChild(itemDiv);
+}

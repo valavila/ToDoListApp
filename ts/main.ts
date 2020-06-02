@@ -87,10 +87,19 @@ function displayTodoItem(item: ToDoItem): void{
     else{
         let incompleteTodos = document.getElementById("incomplete-items");
         incompleteTodos.appendChild(itemDiv);
-    }
-
-    
+    } 
 }
+
+function markAsComplete(){
+    let itemDiv = <HTMLElement>this;
+    console.log(itemDiv);
+    itemDiv.classList.add("completed");
+
+    let completedItems = document.getElementById("complete-items");
+    console.log(completedItems);
+    completedItems.appendChild(itemDiv);
+}
+
 
 
 
