@@ -99,7 +99,19 @@ function markAsComplete(){
     console.log(completedItems);
     completedItems.appendChild(itemDiv);
 }
+function saveToDo(item: ToDoItem):void{
+    let currItems = getToDoItems();
+    if(currItems == null){ // no items found
+        currItems = new Array();
+    }
+    currItems.push(item);
 
+    let currItemString = JSON.stringify(currItems);
+    localStorage.setItem(todokey, currItemString);
+
+}
+
+const todokey = "todo";
 
 
 

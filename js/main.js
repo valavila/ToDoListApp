@@ -66,3 +66,13 @@ function markAsComplete() {
     console.log(completedItems);
     completedItems.appendChild(itemDiv);
 }
+function saveToDo(item) {
+    var currItems = getToDoItems();
+    if (currItems == null) {
+        currItems = new Array();
+    }
+    currItems.push(item);
+    var currItemString = JSON.stringify(currItems);
+    localStorage.setItem(todokey, currItemString);
+}
+var todokey = "todo";
