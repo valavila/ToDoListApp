@@ -14,3 +14,14 @@
 .todo p{
     margin: 0px;
 }
+.completed{
+    opacity: 35%;
+    background-color: lightgreen;
+    text-decoration: line-through;
+}
+
+#complete-items{
+    border: .2em solid blue;
+    width: 50%;
+    box-sizing: border-box;
+}
