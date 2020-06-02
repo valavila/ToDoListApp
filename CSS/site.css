@@ -25,3 +25,14 @@
     width: 50%;
     box-sizing: border-box;
 }
+
+#incomplete-items{
+    border: .1em solid black;
+    margin-bottom: 1em;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+#all-items{
+    display: flex;
+}
