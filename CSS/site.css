@@ -36,3 +36,12 @@
 #all-items{
     display: flex;
 }
+
+#complete-items
+#incomplete-items{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
